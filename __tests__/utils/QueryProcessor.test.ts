@@ -50,4 +50,9 @@ describe("QueryProcessor", () => {
     test('should test if a number is a square and a cube', () => {
         expect(QueryProcessor("Which of the following numbers is both a square and a cube: 121, 1752, 64, 3679, 97, 3214, 1728?")).toEqual("64");
     });
+
+    test('should subtract numbers', () => {
+        expect(QueryProcessor("What is 16 minus 9?")).toEqual("7");
+        expect(QueryProcessor("What is 12 minus 1?")).toEqual("11");
+    });
 });

@@ -43,13 +43,18 @@ export default function QueryProcessor(query: string): string {
   if (isSquareCubeMatch) {
     for (let i = 1; i <= 6; i++) {
       const x: number = parseInt(isSquareCubeMatch[i]);
-      if (Number.isInteger(Math.sqrt(x))){
-        if (Number.isInteger(Math.cbrt(x))){
-          return x.toString();
-        }
+      if (Number.isInteger(Math.sqrt(x)) && Number.isInteger(Math.cbrt(x))){
+        return x.toString();
       }
     }
     return ""
+  }
+
+  const subMatch = query.match(/What is (\d+) minus (\d+)?/)
+  if (subMatch) {
+    const x: number = parseInt(subMatch[1]);
+    const y: number = parseInt(subMatch[2]);
+    return (x-y).toString();
   }
   return "";
 }
