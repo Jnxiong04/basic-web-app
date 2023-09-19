@@ -24,5 +24,12 @@ export default function QueryProcessor(query: string): string {
     return (x+y).toString();
   }
 
+  const maxMatch = query.match(/Which of the following numbers is the largest: (\d+), (\d+), (\d+)?/)
+  if (maxMatch) {
+    const x: number = parseInt(maxMatch[1]);
+    const y: number = parseInt(maxMatch[2]);
+    const z: number = parseInt(maxMatch[3]);
+    return Math.max(x, y, z).toString()
+  }
   return "";
 }
