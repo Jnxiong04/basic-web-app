@@ -56,5 +56,31 @@ export default function QueryProcessor(query: string): string {
     const y: number = parseInt(subMatch[2]);
     return (x-y).toString();
   }
+
+  const powerMatch = query.match(/What is (\d+) to the power of (\d+)?/)
+  if (powerMatch) {
+    const x: number = parseInt(powerMatch[1]);
+    const y: number = parseInt(powerMatch[2]);
+    return (Math.pow(x, y)).toString();
+  }
+
+  // const primeMatch = query.match(/Which of the following numbers are primes: (\d+), (\d+), (\d+), (\d+), (\d+)?/)
+  // const primes = []
+  // if (primeMatch) {
+  //   for (let i = 1; i <= 5; i++) {
+  //     const x: number = parseInt(primeMatch[i]);
+  //     if (x == 1) {
+  //       continue;
+  //     }
+  //     for (let j = 1; j <= 10; j ++) {
+  //       if (Number.isInteger(x/j)){
+  //         primes.push(x)
+  //         break
+  //       }
+  //     }
+  //   }
+    
+  //}
+
   return "";
 }

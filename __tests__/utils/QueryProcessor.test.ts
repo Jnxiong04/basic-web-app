@@ -55,4 +55,8 @@ describe("QueryProcessor", () => {
         expect(QueryProcessor("What is 16 minus 9?")).toEqual("7");
         expect(QueryProcessor("What is 12 minus 1?")).toEqual("11");
     });
+
+    test('should exponentiate numbers', () => {
+        expect(QueryProcessor("What is 2 to the power of 4?")).toEqual("16");
+    });
 });
