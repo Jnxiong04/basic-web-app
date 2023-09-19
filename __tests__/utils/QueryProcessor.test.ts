@@ -42,4 +42,8 @@ describe("QueryProcessor", () => {
     test('should find max number', () => {
         expect(QueryProcessor("Which of the following numbers is the largest: 46, 20, 72?")).toEqual("72");
     });
+
+    test('should multiply numbers', () => {
+        expect(QueryProcessor("What is 21 multiplied by 1?")).toEqual("21");
+    });
 });
