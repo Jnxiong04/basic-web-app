@@ -38,5 +38,18 @@ export default function QueryProcessor(query: string): string {
     const y: number = parseInt(mulMatch[2]);
     return (x*y).toString();
   }
+
+  const isSquareCubeMatch = query.match(/Which of the following numbers is both a square and a cube: (\d+), (\d+), (\d+), (\d+), (\d+), (\d+), (\d+)?/)
+  if (isSquareCubeMatch) {
+    for (let i = 1; i <= 6; i++) {
+      const x: number = parseInt(isSquareCubeMatch[i]);
+      if (Number.isInteger(Math.sqrt(x))){
+        if (Number.isInteger(Math.cbrt(x))){
+          return x.toString();
+        }
+      }
+    }
+    return ""
+  }
   return "";
 }

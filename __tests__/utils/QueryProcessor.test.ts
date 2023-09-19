@@ -46,4 +46,8 @@ describe("QueryProcessor", () => {
     test('should multiply numbers', () => {
         expect(QueryProcessor("What is 21 multiplied by 1?")).toEqual("21");
     });
+
+    test('should test if a number is a square and a cube', () => {
+        expect(QueryProcessor("Which of the following numbers is both a square and a cube: 121, 1752, 64, 3679, 97, 3214, 1728?")).toEqual("64");
+    });
 });
